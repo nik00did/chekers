@@ -1,0 +1,136 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.desk{
+    width:880px;
+    height:880px;
+    border:1px solid black;
+    position:relative;
+    left:50%;
+    transform: translate(-50%);
+    background-color:#CF9946;
+}
+
+.fields{
+    width:800px;
+    height:800px;
+    border:1px solid #000;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50% , -50% );
+    counter-reset: heading;
+    display:grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(98px, 1fr));
+    grid-auto-rows: 100px;
+    grid-column-gap:0px;
+   
+}
+.fields_row{
+    width:100%;
+    height:100px;
+    display:flex;
+    position:relative;
+}
+
+#wrapper{
+    width:245px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button{
+    position: relative;
+    width: 120px;
+    height: 50px;
+    background-color: firebrick;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.fields_cell-black{
+    background-color:#000;
+    color:#fff;
+    
+}
+
+.fields_row:before{
+   counter-increment: heading;
+    content: "" counter(heading) "";
+    position:absolute;
+    left:-25px;
+    font-size:35px;
+    top:50%;
+     transform: translate(0, -50% );
+}
+
+
+#firstRow   .fields_cell:nth-child(1):before{content:"A";}
+#firstRow   .fields_cell:nth-child(2):before{content:"B";}
+#firstRow   .fields_cell:nth-child(3):before{content:"C";}
+#firstRow   .fields_cell:nth-child(4):before{content:"D";}
+#firstRow   .fields_cell:nth-child(5):before{content:"E";}
+#firstRow   .fields_cell:nth-child(6):before{content:"F";}
+#firstRow   .fields_cell:nth-child(7):before{content:"G";}
+#firstRow   .fields_cell:nth-child(8):before{content:"H";}
+
+#firstRow   .fields_cell:before {
+    font-size:35px;
+    position:relative;
+    top:-37px;
+    left:40%;
+   
+}
+
+.cheker{
+    width:90px;
+    height:90px;
+    position: relative;
+    
+    border-radius:50%;
+    top:0px;
+    background-repeat: no-repeat;
+    background-size:50px auto;
+    background-position:center;
+    transform: translate(5% , 5%);
+    
+    
+}
+    
+.cheker-white{
+    background-color:white;
+    background-image:url(./img/windows.png);
+    box-shadow: 0 5px 0 #999;
+}
+
+.cheker-red {
+background-color:red;
+ background-image:url(./img/apple.png);
+ box-shadow: 0 5px 0 #474A51;
+ 
+}
+
+.cheker-white[queen = on]{
+    background-color:white;
+    background-image:url(./img/windows_q.png);
+    box-shadow: 0 5px 0 #999;
+}
+
+.cheker-red[queen = on] {
+background-color:red;
+ background-image:url(./img/apple_q.png);
+ box-shadow: 0 5px 0 #474A51;
+ 
+}
+
+
+
+.cheker[display=hide] {
+    display:none;
+}
